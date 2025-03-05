@@ -1,0 +1,405 @@
+<style>
+  * {
+    box-sizing: border-box;
+  }
+
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+  }
+
+  .frame {
+    position: relative;
+    width: 500px;
+    height: 500px;
+    border: 1px solid black;
+  }
+
+  .cup {
+    border: 1px solid black;
+    width: 75px;
+    height: 75px;
+    background-color: white;
+    position: absolute;
+    bottom: 150px;
+    left: 360px;
+    z-index: 3;
+  }
+
+  .flag {
+    width: 0;
+    height: 0;
+    border-left: 30px solid transparent;
+    border-right: 30px solid transparent;
+    border-top: 50px solid red;
+    position: absolute;
+    top: 10px;
+    left: -9%;
+    transform: rotate(270deg);
+    z-index: 5;
+  }
+
+  .flag-2 {
+    width: 0;
+    height: 0;
+    border-left: 30px solid transparent;
+    border-right: 30px solid transparent;
+    border-top: 50px solid red;
+    position: absolute;
+    top: 10px;
+    left: -9%;
+    transform: rotate(270deg);
+    z-index: 5;
+  }
+
+  .cup-handle {
+    width: 150px;
+    height: 150px;
+    background: black;
+    background: radial-gradient(circle, white 50%, transparent 51%);
+    border-radius: 50%;
+  }
+
+  .top-cup {
+    border: 1px solid black;
+    position: absolute;
+    left: 43px;
+    bottom: 80px;
+  }
+
+  .flag-3 {
+    width: 0;
+    height: 0;
+    border-left: 30px solid transparent;
+    border-right: 30px solid transparent;
+    border-top: 50px solid red;
+    position: absolute;
+    bottom: 15px;
+    left: -6px;
+    transform: rotate(270deg);
+    z-index: 1;
+  }
+
+  .right-cup {
+    left: 510px;
+    top: 318px;
+    position: absolute;
+  }
+
+  .stripe {
+    width: 100%;
+    height: 20%;
+    background-color: blue;
+    margin-bottom: 15px;
+  }
+
+  .orange-circle {
+    width: 145px;
+    height: 40px;
+    background-color: rgb(170, 40, 0);
+    position: absolute;
+    top: 310px;
+    right: 385px;
+    border-radius: 30px;
+    z-index: 2
+  }
+
+  .orange-rectangle {
+    width: 130px;
+    height: 55px;
+    background-color: rgb(200, 60, 0);
+    position: absolute;
+    top: 340px;
+    right: 390px;
+    border-radius: 15px;
+  }
+
+  .orange-rectangle-2 {
+    width: 110px;
+    height: 50px;
+    background-color: rgb(200, 60, 0);
+    position: absolute;
+    bottom: -40px;
+    right: 9px;
+    border-radius: 15px;
+  }
+
+  .orange-rectangle-3 {
+    width: 95px;
+    height: 40px;
+    background-color: rgb(200, 60, 0);
+    position: absolute;
+    bottom: -35px;
+    right: 7px;
+    border-radius: 15px;
+  }
+
+  .silver-box {
+    width: 95px;
+    height: 25px;
+    background-color: rgb(192, 192, 192);
+    position: absolute;
+    bottom: -24px;
+    right: -1px;
+    border-radius: 20px;
+  }
+
+  .silver-box-2 {
+    width: 104px;
+    height: 20px;
+    background-color: rgb(192, 192, 192);
+    position: absolute;
+    bottom: -18px;
+    right: -5px;
+    border-radius: 10px;
+  }
+
+  .silver-box-3 {
+    width: 110px;
+    height: 30px;
+    background-color: rgb(192, 192, 192);
+    position: absolute;
+    bottom: -27px;
+    right: -4px;
+    border-radius: 15px;
+  }
+
+  .silver-box-4 {
+    width: 110px;
+    height: 45px;
+    background-color: rgb(192, 192, 192);
+    position: absolute;
+    bottom: -36px;
+    right: -1px;
+    border-radius: 15px;
+  }
+
+  .little-black-top {
+    width: 20px;
+    height: 25px;
+    background-color: rgb(0, 0, 0);
+    position: absolute;
+    bottom: 260px;
+    right: 50px;
+    border-radius: 15px;
+  }
+
+  .little-black-top-2 {
+    width: 26px;
+    height: 20px;
+    background-color: rgb(0, 0, 0);
+    position: absolute;
+    bottom: 16px;
+    left: -3px;
+    border-radius: 7px;
+  }
+
+  .little-orange-box {
+    width: 26px;
+    height: 30px;
+    background-color: rgb(200, 60, 0);
+    position: absolute;
+    top: 50px;
+    left: 70px;
+  }
+
+  .black-connector {
+    width: 50px;
+    height: 25px;
+    background-color: rgb(0, 0, 0);
+    position: absolute;
+    top: 332px;
+    right: 350px;
+  }
+
+  .black-handle {
+    width: 180px;
+    height: 120px;
+    border: solid 30px #000;
+    border-color: black transparent transparent transparent;
+    position: absolute;
+    top: 15px;
+    right: -80px;
+    border-radius: 30%/100px 100px 0 0;
+    transform: rotate(85deg);
+  }
+
+  .yellow-cylinder {
+    width: 180px;
+    height: 240px;
+    border: solid 1px #000;
+    background-color: yellow;
+    position: absolute;
+    bottom: 150px;
+    border-radius: 50px;
+    z-index: 2;
+  }
+
+  .text-box {
+    width: 180px;
+    height: 40px;
+    position: absolute;
+    top: 430px;
+    left: 42.5%;
+    line-height: 40px;
+    font-size: 50px;
+    color: black;
+    z-index: 3;
+  }
+
+  .black-triangle {
+    width: 0;
+    height: 0;
+    border-left: 35px solid transparent;
+    border-right: 35px solid transparent;
+    border-bottom: 27px solid black;
+    position: absolute;
+    top: 420px;
+    left: 51%;
+    z-index: 4;
+  }
+
+  .red-triangle {
+    width: 0;
+    height: 0;
+    border-left: 20px solid transparent;
+    border-right: 20px solid transparent;
+    border-top: 40px solid red;
+    position: absolute;
+    top: 420px;
+    left: 52.3%;
+    z-index: 5;
+  }
+
+  .mini-text-box {
+    width: 180px;
+    height: 40px;
+    position: absolute;
+    top: 520px;
+    left: 43.5%;
+    text-align: left;
+    line-height: 40px;
+    font-size: 20px;
+    font-style: italic;
+    color: black;
+    z-index: 3;
+  }
+
+  .red-stripe {
+    width: 180px;
+    height: 75px;
+    background-color: red;
+    position: absolute;
+    bottom: 150px;
+    border-radius: 0 0 50px 50px;
+    z-index: 3;
+  }
+
+  .yellow-cylinder-2 {
+    width: 180px;
+    height: 240px;
+    border: solid 1px #000;
+    background-color: yellow;
+    position: absolute;
+    bottom: 150px;
+    left: 340px;
+    border-radius: 50px;
+    z-index: 1;
+  }
+
+  .text-box-2 {
+    width: 180px;
+    height: 40px;
+    position: absolute;
+    top: 430px;
+    left: 30.5%;
+    line-height: 40px;
+    font-size: 50px;
+    color: black;
+    z-index: 2;
+  }
+
+  .red-stripe-2 {
+    width: 180px;
+    height: 75px;
+    background-color: red;
+    position: absolute;
+    bottom: 150px;
+    left: 340px;
+    border-radius: 0 0 50px 50px;
+    z-index: 2;
+  }
+
+  .mini-text-box-2 {
+    width: 180px;
+    height: 40px;
+    position: absolute;
+    top: 520px;
+    left: 30.5%;
+    text-align: left;
+    line-height: 40px;
+    font-size: 20px;
+    font-style: italic;
+    color: black;
+    z-index: 2;
+  }
+</style>
+<div class="frame">
+  <div class="cup top-cup">
+    <div class="stripe"></div>
+    <div class="stripe"></div>
+    <div class="stripe">
+      <div class="flag-2"></div>
+    </div>
+  </div>
+</div>
+<div class="cup">
+  <div class="flag"></div>
+
+  <div class="stripe"></div>
+  <div class="stripe"></div>
+  <div class="stripe"></div>
+</div>
+<div class="cup right-cup">
+  <div class="flag-3"></div>
+  <div class="stripe"></div>
+  <div class="stripe"></div>
+  <div class="stripe"></div>
+
+</div>
+<div class="black-connector">
+</div>
+<div class="yellow-cylinder"></div>
+<div class="text-box">
+  Café Bustelo
+</div>
+<div class="mini-text-box">
+  Ground Coffee
+</div>
+<div class="red-stripe"></div>
+<div class="black-triangle"></div>
+<div class="red-triangle"></div>
+<div class="yellow-cylinder-2"></div>
+<div class="text-box-2">
+  Café Bustel </div>
+<div class="red-stripe-2"></div>
+<div class="mini-text-box-2">
+  Ground Coffee
+</div>
+<div class="orange-circle">
+</div>
+<div class="orange-rectangle">
+  <div class="orange-rectangle-2">
+    <div class="orange-rectangle-3">
+      <div class="silver-box">
+        <div class="silver-box-2">
+          <div class="silver-box-3">
+            <div class="silver-box-4">
+              <div class="little-black-top">
+                <div class="little-black-top-2">
+                  <div class="little-orange-box">
+                    <div class="black-handle">
+                      <div></div>
